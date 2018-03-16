@@ -1,1 +1,159 @@
-"Hello My test" 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+  
+  <title>North Swimming</title>
+  <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+  </style>
+  <script>
+$(document).ready(function() {
+    
+    /* Every time the window is scrolled ... */
+    $(window).scroll( function(){
+    
+        /* Check the location of each desired element */
+        $('.hideme').each( function(i){
+            
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > bottom_of_object - 200 ){
+                
+                $(this).animate({'opacity':'1'},500);
+                    
+            }
+            
+        }); 
+    
+    });
+    
+});
+</script>
+</head> 
+<body>
+
+
+
+<section style="margin-bottom: 0px; padding: 20px 0px 20px 0px">
+  <center><h1 style="font-family: Oswald; font-weight: bold"><img src="images/logo.png" height="7%" width="7%"> HSN Swim Team</h1></center>
+  <center><h6>Speedy <span class="yolo">Swimmers</span></h6>
+</section>
+
+  
+<nav class="navbar navbar-expand-md sticky-top bg-dark navbar-dark">
+    <a class="navbar_brand" href="index.html" style="font-weight: bold; margin: 0 20px 0 20px; color: #007bff" >Home</a>  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mycollapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+   <div class="collapse navbar-collapse" id="mycollapsibleNavbar">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="aboutUs.html" style="font-weight: bold; margin: 0 20px 0 20px; color: #007bff"  >About Us</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="practiceSchedules.html" style="font-weight: bold; margin: 0 20px 0 20px; color: #007bff"  >Practice Schedule</a>
+    </li>      
+    <li class="nav-item">
+      <a class="nav-link" href="meetSchedule.html" style="font-weight: bold; margin: 0 20px 0 20px; color: #007bff"  >Meet Schedule</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="records.html" style="font-weight: bold; margin: 0 20px 0 20px; color: #007bff"  >Records</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="boosterclub.html" style="font-weight: bold; margin: 0 20px 0 20px; color: #007bff"  >Booster Club</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="forms.html" style="font-weight: bold; margin: 0 20px 0 20px; color: #007bff"  >Forms</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="FAQs.html" style="font-weight: bold; margin: 0 20px 0 20px; color: #007bff"  >FAQs</a>
+    </li>
+  </ul>
+  </div>
+</nav>
+
+
+
+
+
+<div id="demo" class="carousel slide" data-ride="carousel">
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/swimming.jpg" alt="Los Angeles">
+    </div>
+    <div class="carousel-item">
+      <img src="images/gal5.jpg" alt="Chicago" >
+    </div>
+    <div class="carousel-item">
+      <img src="images/ffff.jpg" alt="New York" >
+    </div>
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+<section>
+<div class="container hideme">
+  <div class="row">
+    <div class="col-md-6">
+      <img src="https://swimmingworld.azureedge.net/news/wp-content/uploads/2016/08/katinka-hosszu-hungary-400-im-prelims-2016-rio-olympics-720x500.jpg" class=img-thumbnail>
+      <div class="title">Topic 1</div>
+    </div>
+    <div class="col-md-6">
+      <div class="title">Topic 1</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="container hideme">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="title">Topic 2</div>
+    </div>
+    <div class="col-md-6">
+      <img src="http://images.enca.com/encadrupal/styles/600_383/s3/h_52940655+copy.jpg" class="img-thumbnail">
+      <div class="title">Topic 2</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="container hideme">
+  <div class="row">
+    <div class="col-md-6">
+      <img src="http://upl.stack.com/wp-content/uploads/2013/02/Rebecca-Soni-shatters-world-record-of-Womens-200m-breaststroke-London-Olympic-Games-176763-e1361910600191.jpg" class="img-thumbnail">
+      <div class="title">Rebecca Soni</div>
+    </div>
+    <div class="col-md-6">
+      <div class="title">Rebecca Soni</div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+</body>
+</html>

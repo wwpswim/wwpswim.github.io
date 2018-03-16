@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	 <meta charset="utf-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+	 <link rel="stylesheet" href="css/style.css">
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+	 <title>North Swimming</title>
+   <script>
+$(document).ready(function() {
+    
+    /* Every time the window is scrolled ... */
+    $(window).scroll( function(){
+    
+        /* Check the location of each desired element */
+        $('.hideme').each( function(i){
+            
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > bottom_of_object - 200 ){
+                
+                $(this).animate({'opacity':'1'},500);
+                    
+            }
+            
+        }); 
+    
+    });
+    
+});
+</script>
+  <style>
+body  {
+    background-image: url("images/ffff.jpg");
+    background-color: #cccccc;
+}
+</style>
+</head>
+
+<body>
+<div class="container" style="background-color:#f8f9fa;">
+
+    <div class="row">
+      <div class="col-sm-4" >
+	  <img src="images/logo.png" height="90%" width="60%">
+      </div>
+      <div class="col-sm-8">
+	    <br>
+        <h2>WEST WINDSOR-PLAINSBORO</h2>
+		<h2>High School North <span class="yolo">Swim Team</span></h2>
+		
+      </div>
+    </div>
+
+
+ <nav class="navbar navbar-expand-md sticky-top bg-dark navbar-dark">
+    <a class="navbar_brand" href="index.html" style="font-weight: bold; margin: 0 20px 0 20px; color: #f8f9fa" >Home</a>  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mycollapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+   <div class="collapse navbar-collapse" id="mycollapsibleNavbar">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="aboutUs.html" style="font-weight: bold; margin: 0 20px 0 20px; color: #f8f9fa"  >About Us</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="practiceSchedules.html" style="font-weight: bold; margin: 0 20px 0 20px; color: #f8f9fa"  >Practice Schedule</a>
+    </li>      
+    <li class="nav-item">
+      <a class="nav-link" href="meetSchedule.html" style="font-weight: bold; margin: 0 20px 0 20px; color: #f8f9fa"  >Meet Schedule</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="records.html" style="font-weight: bold; margin: 0 20px 0 20px; color: #f8f9fa"  >Records</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="boosterclub.html" style="font-weight: bold; margin: 0 20px 0 20px; color: #f8f9fa"  >Booster Club</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="forms.html" style="font-weight: bold; margin: 0 20px 0 20px; color: #f8f9fa"  >Forms</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="FAQs.html" style="font-weight: bold; margin: 0 20px 0 20px; color: #f8f9fa"  >FAQs</a>
+    </li>
+  </ul>
+  </div>
+</nav>	
+
+
+
+
+<br>
+<h3><center>Coaches</center></h3>
+<br>
+<section>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <img src="images/filler.jpeg" class="img-thumbnail">
+      <div class="title">Todd Robbinson</div>
+    </div>
+    <div class="col-md-6">
+      <div class="title">About Us Jawn</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="container hideme">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="title">About Us Jawn</div>
+    </div>
+    <div class="col-md-6">
+      <img src="images/filler.jpeg" class="img-thumbnail">
+      <div class="title">Cheryl Reca</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="container hideme">
+  <div class="row">
+    <div class="col-md-6">
+      <img src="images/filler.jpeg" class="img-thumbnail">
+      <div class="title">Kirk Markley</div>
+    </div>
+    <div class="col-md-6">
+      <div class="title">About Us Jawn</div>
+    </div>
+  </div>
+</div>
+</section>
+<br>
+<section class="hideme">
+  <div class="container">
+    <h3><center>Title</center></h3>
+    <br>
+    <p>Description asdflkajsdohsirngoaisnhgofig</p>
+    <br>
+  </div>
+</section>
+</div>
+
+</body>
+
+</html>
