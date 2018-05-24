@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.top-container {
+  width:590px;
+  height: 306px;
+  margin: auto;
+  border-style: double;
+  background-color: #787BA8;
+  position: relative;  
+  
+}
+.flip-container {
+  	perspective: 1000px; 
+}
+
+/* flip the pane when hovered */
+.flip-container:hover .flipper {
+	transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+	width: 500px;
+	height: 300px;
+	margin: auto;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 1.2s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.back ,.front {
+    backface-visibility: hidden;  
+    border-style: solid;
+	background-color: #CEECEC;
+    position: absolute;
+}
+
+
+.front {
+	text-align:center;
+	line-height: 240px;
+	transform: rotateY(0deg);
+}
+
+.back {
+ box-sizing: border-box;
+    padding-top: 50px;
+	text-align:center;
+	transform: rotateY(180deg);
+}
+
+.forIE {
+  color: red;
+}
+
+/*******************************************************/
+
+
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+
+
+
+
+
+</style>
+</head>
+<body>
+<br><br><br><br><br><br><br><br><br><br>
+<div class="top-container">
+	<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+		<div class="flipper">
+			<div class="front">
+				abate
+			</div>
+			<div class="back">
+				  <span style="font-variant-caps: all-small-caps;" class="forIE" >V.</span>subside; decrease, lessen. <i>abatement</i>, <span style="font-variant-caps: all-small-caps;" class="forIE">N.</span><br/><br/> Rather than leaving immediately, they waited for the storm to <i>abate</i>.			
+			</div>
+		</div>
+	</div>
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>	
+</div>
+
+
+</body>
+</html>
