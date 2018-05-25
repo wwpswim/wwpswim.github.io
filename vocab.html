@@ -3,116 +3,182 @@
 <head>
 <style>
 
-.top-container {
-  width:590px;
-  height: 306px;
-  margin: auto;
-  border-style: double;
-  background-color: #787BA8;
-  position: relative;  
-  
-}
-.flip-container {
-  	perspective: 1000px; 
-}
+		/* simple */
+		.flip-container {
+			-webkit-perspective: 1000;
+			-moz-perspective: 1000;
+			-ms-perspective: 1000;
+			perspective: 1000;
 
-/* flip the pane when hovered */
-.flip-container:hover .flipper {
-	transform: rotateY(180deg);
-	    -webkit-transform: rotateY(180deg); /* Safari */
-}
 
-.flip-container, .front, .back {
-	width: 500px;
-	height: 300px;
-	margin: auto;
-}
+			border: 1px solid #ccc;
+		}
 
-/* flip speed goes here */
-.flipper {
-	transition: 1.2s;
-	transform-style: preserve-3d;
-	position: relative;
-}
+			/*
+			.flip-container:hover .flipper, .flip-container.hover .flipper, #flip-toggle.flip .flipper {
+				-webkit-transform: rotateY(180deg);
+				-moz-transform: rotateY(180deg);
+				-ms-transform: rotateY(180deg);
+				transform: rotateY(180deg);
+				filter: FlipH;
+    			-ms-filter: "FlipH";
+			}
+			*/
 
-/* hide back of pane during swap */
-.back ,.front {
-    backface-visibility: hidden;  
-    border-style: solid;
-	background-color: #CEECEC;
-    position: absolute;
+
+			/* START: Accommodating for IE */
+			.flip-container:hover .back, .flip-container.hover .back {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
 }
 
-
-.front {
-	text-align:center;
-	line-height: 240px;
-	transform: rotateY(0deg);
-	-webkit-transform: rotateY(0deg); /* Safari */	
-	
+.flip-container:hover .front, .flip-container.hover .front {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
+		
+		/* END: Accommodating for IE */
 
-.back {
- box-sizing: border-box;
-    padding-top: 50px;
-	text-align:center;
-	transform: rotateY(180deg);
-    -webkit-transform: rotateY(180deg); /* Safari */
-}
+		.flip-container, .front, .back {
+			width: 320px;
+			height: 427px;
+		}
 
-.forIE {
-  color: red;
-}
+		.flipper {
+			-webkit-transition: 0.6s;
+			-webkit-transform-style: preserve-3d;
+			-ms-transition: 0.6s;
 
-/*******************************************************/
+			-moz-transition: 0.6s;
+			-moz-transform: perspective(1000px);
+			-moz-transform-style: preserve-3d;
+			-ms-transform-style: preserve-3d;
 
+			transition: 0.6s;
+			transform-style: preserve-3d;
 
+			position: relative;
+		}
 
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-}
+		.front, .back {
+			-webkit-backface-visibility: hidden;
+			-moz-backface-visibility: hidden;
+			-ms-backface-visibility: hidden;
+			backface-visibility: hidden;
 
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
+		    -webkit-transition: 0.6s;
+		    -webkit-transform-style: preserve-3d;
+		    -webkit-transform: rotateY(0deg);
 
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
+		    -moz-transition: 0.6s;
+		    -moz-transform-style: preserve-3d;
+		    -moz-transform: rotateY(0deg);
 
+		    -o-transition: 0.6s;
+		    -o-transform-style: preserve-3d;
+		    -o-transform: rotateY(0deg);
+
+		    -ms-transition: 0.6s;
+		    -ms-transform-style: preserve-3d;
+		    -ms-transform: rotateY(0deg);
+
+		    transition: 0.6s;
+		    transform-style: preserve-3d;
+		    transform: rotateY(0deg);
+
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		.front {
+			-webkit-transform: rotateY(0deg);
+			-ms-transform: rotateY(0deg);
+			background: lightgreen;
+			z-index: 2;
+		}
+
+		.back {
+			background: lightblue;
+			-webkit-transform: rotateY(-180deg);
+		    -moz-transform: rotateY(-180deg);
+		    -o-transform: rotateY(-180deg);
+		    -ms-transform: rotateY(-180deg);
+		    transform: rotateY(-180deg);
+		}
+
+		.front .name {
+			font-size: 2em;
+			display: inline-block;
+			background: rgba(33, 33, 33, 0.9);
+			color: #f8f8f8;
+			font-family: Courier;
+			padding: 5px 10px;
+			border-radius: 5px;
+			bottom: 60px;
+			left: 25%;
+			position: absolute;
+			text-shadow: 0.1em 0.1em 0.05em #333;
+			display: none;
+
+			-webkit-transform: rotate(-20deg);
+			-moz-transform: rotate(-20deg);
+			-ms-transform: rotate(-20deg);
+			transform: rotate(-20deg);
+		}
+
+		.back-logo {
+			position: absolute;
+			top: 40px;
+			left: 90px;
+			width: 160px;
+			height: 117px;
+			background: url(logo.png) 0 0 no-repeat;
+		}
+
+		.back-title {
+			font-weight: bold;
+			color: #00304a;
+			position: absolute;
+			top: 180px;
+			left: 0;
+			right: 0;
+			text-align: center;
+			text-shadow: 0.1em 0.1em 0.05em #acd7e5;
+			font-family: Courier;
+			font-size: 22px;
+		}
+
+		.back p {
+			position: absolute;
+			bottom: 40px;
+			left: 0;
+			right: 0;
+			text-align: center;
+			padding: 0 20px;
+			font-size: 18px;
+		}
 
 
 
 </style>
 </head>
 <body>
-<br><br><br><br><br><br><br><br><br><br>
-<div class="top-container">
-	<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-		<div class="flipper">
-			<div class="front">
-				abate
-			</div>
-			<div class="back">
-				  <span style="font-variant-caps: all-small-caps;" class="forIE" >V.</span>subside; decrease, lessen. <i>abatement</i>, <span style="font-variant-caps: all-small-caps;" class="forIE">N.</span><br/><br/> Rather than leaving immediately, they waited for the storm to <i>abate</i>.			
-			</div>
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	<div class="flipper">
+		<div class="front">
+			front content
+		</div>
+		<div class="back">
+			back content
 		</div>
 	</div>
-<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-<a class="next" onclick="plusSlides(1)">&#10095;</a>	
 </div>
-
 
 </body>
 </html>
