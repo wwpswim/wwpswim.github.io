@@ -14,19 +14,11 @@
 			border: 1px solid #ccc;
 		}
 
-			/*
-			.flip-container:hover .flipper, .flip-container.hover .flipper, #flip-toggle.flip .flipper {
-				-webkit-transform: rotateY(180deg);
-				-moz-transform: rotateY(180deg);
-				-ms-transform: rotateY(180deg);
-				transform: rotateY(180deg);
-				filter: FlipH;
-    			-ms-filter: "FlipH";
-			}
-			*/
 
 
 			/* START: Accommodating for IE */
+			
+/*			
 			.flip-container:hover .back, .flip-container.hover .back {
     -webkit-transform: rotateY(0deg);
     -moz-transform: rotateY(0deg);
@@ -41,7 +33,14 @@
     -o-transform: rotateY(180deg);
     transform: rotateY(180deg);
 }
-		
+*/	
+
+.newfront{
+    transform: rotateY(180deg);
+}
+.newback{
+    transform: rotateY(0deg);
+}
 		/* END: Accommodating for IE */
 
 		.flip-container, .front, .back {
@@ -167,14 +166,37 @@
 
 
 </style>
+<script>
+
+var flag=0;
+
+function flipfun(event) {
+  var f = document.getElementById('front1');
+  var b = document.getElementById("back1");
+  if (flag==0) {
+    f.style.transform="rotateY(180deg)";
+    b.style.transform="rotateY(0deg)";
+	flag=1;
+  }
+  else  {
+    f.style.transform="rotateY(0deg)";
+    b.style.transform="rotateY(180deg)";
+	flag=0;
+  }
+}
+
+
+</script>
+
+
 </head>
 <body>
-<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+<div class="flip-container" onclick="flipfun(event)"  ontouchstart="flipfun(event)">
 	<div class="flipper">
-		<div class="front">
+		<div class="front" id="front1">
 			front content
 		</div>
-		<div class="back">
+		<div class="back" id="back1">
 			back content
 		</div>
 	</div>
