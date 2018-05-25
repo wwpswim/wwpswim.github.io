@@ -19,6 +19,7 @@
 /* flip the pane when hovered */
 .flip-container:hover .flipper {
 	transform: rotateY(180deg);
+	    -webkit-transform: rotateY(180deg); /* Safari */
 }
 
 .flip-container, .front, .back {
@@ -47,6 +48,8 @@
 	text-align:center;
 	line-height: 240px;
 	transform: rotateY(0deg);
+	-webkit-transform: rotateY(0deg); /* Safari */	
+	
 }
 
 .back {
@@ -54,6 +57,7 @@
     padding-top: 50px;
 	text-align:center;
 	transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg); /* Safari */
 }
 
 .forIE {
@@ -86,18 +90,6 @@
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
-
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-
 
 
 
