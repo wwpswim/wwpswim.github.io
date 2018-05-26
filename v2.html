@@ -21,19 +21,40 @@
   backface-visibility: hidden;   
   transition: transform .5s linear 0s;  
 }
+/*
 .flip3d:hover  .front {
   transform:  rotateY(180deg);
 }
 .flip3d:hover  .back {
   transform:  rotateY(0);
 }
+*/
 </style>
+
+<script>
+var flag=0;
+function myfun() {
+  var b=document.getElementById("backid");
+  var f=document.getElementById("frontid");
+  if (flag==0) {
+    b.style.transform= "rotateY(0)";
+    f.style.transform= "rotateY(180deg)";
+	flag=1;
+  }  else {
+    b.style.transform= "rotateY(180deg)";
+    f.style.transform= "rotateY(0deg)";
+	flag=0;
+  }
+  
+}
+</script>
+
 </head>
 
 <body>
-<div class="flip3d">
-  <div class="back"> box1-back</div>
-  <div class="front"> box1-front</div>
+<div class="flip3d" ontouchstart="myfun()" onclick="myfun()">
+  <div class="back" id="backid"> box1-back</div>
+  <div class="front" id="frontid"> box1-front</div>
 </div>
 
 </body>
